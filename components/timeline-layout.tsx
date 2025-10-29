@@ -85,8 +85,9 @@ export const TimelineLayout = () => {
           <TimelineHeader index={index} isInView={inViewIndices.has(index)}>
             <TimelineTime>Step {index + 1}</TimelineTime>
             <TimelineTitle index={index}>{item.title}</TimelineTitle>
+             {item.description && <TimelineDescription index={index}>{item.description}</TimelineDescription>}
           </TimelineHeader>
-          {item.description && <TimelineDescription index={index}>{item.description}</TimelineDescription>}
+         
         </TimelineItem>
       ))}
     </Timeline>
