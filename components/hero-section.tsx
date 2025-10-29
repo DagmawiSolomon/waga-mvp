@@ -5,6 +5,8 @@ import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
 import { Montserrat, Open_Sans } from 'next/font/google'
+import { header_font } from './fonts'
+import Features from './features-1'
 
 
 const montserrat = Montserrat({
@@ -40,7 +42,8 @@ const transitionVariants = {
 
 export default function HeroSection() {
   return (
-    <>
+    <div className="min-h-screen w-full relative">
+   
       <HeroHeader />
       <main className="overflow-hidden">
         <div aria-hidden className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
@@ -139,7 +142,7 @@ export default function HeroSection() {
                   speedSegment={0.3}
                   delay={0.5}
                   as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+                  className="mx-auto mt-8 max-w-2xl text-balance text-lg "
                 >
                   Brewing a New Era of Coffee with Blockchain & Web3 Technology.
                 </TextEffect>
@@ -174,8 +177,29 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+         
         </section>
       </main>
-    </>
+       <section className="py-12 md:py-20 isolate">
+            <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+              
+                <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
+                    <div className="space-y-4">
+                        <div className={`text-5xl font-bold ${header_font.className}`}>24</div>
+                        <p>Smart Contracts Deployed</p>
+                    </div>
+                    <div className="space-y-4">
+                        <div className={`text-5xl font-bold ${header_font.className}`}>0</div>
+                        <p>Coffee Batches Tracked</p>
+                    </div>
+                    <div className="space-y-4">
+                        <div className={`text-5xl font-bold ${header_font.className}`}>0%</div>
+                        <p>Verificate Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
   )
 }
