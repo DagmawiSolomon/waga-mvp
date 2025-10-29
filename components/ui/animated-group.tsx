@@ -2,7 +2,7 @@
 import { ReactNode } from 'react';
 import { motion, Variants } from 'motion/react';
 import React from 'react';
-
+import type { JSX } from 'react';
 export type PresetType =
   | 'fade'
   | 'slide'
@@ -23,7 +23,7 @@ export type AnimatedGroupProps = {
     item?: Variants;
   };
   preset?: PresetType;
-  as?: React.ElementType;
+ as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   asChild?: React.ElementType;
 };
 
