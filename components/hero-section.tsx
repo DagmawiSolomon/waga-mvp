@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { HeroHeader } from "./header"
+import { HeroHeader } from "@/components/header"
 import { Montserrat, Open_Sans } from "next/font/google"
-import { header_font } from "./fonts"
 import { ArrowRight } from "lucide-react"
+import { StatsGrid } from "@/components/stats-grid"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -73,22 +73,23 @@ export default function HeroSection() {
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <Link
-                                        href="#link"
-                                        className="hover:bg-secondary/30  dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                                        <span className="text-foreground text-sm">🎉 Now Live on Base Testnet</span>
-                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+                  href="#link"
+                  className="hover:bg-secondary/30  dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
+                >
+                  <span className="text-foreground text-sm">🎉 Now Live on Base Testnet</span>
+                  <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
-                                        <div className="bg-secondary/50 group-hover:bg-secondary size-6 overflow-hidden rounded-full duration-500">
-                                            <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </Link>
+                  <div className="bg-secondary/50 group-hover:bg-secondary size-6 overflow-hidden rounded-full duration-500">
+                    <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                      <span className="flex size-6">
+                        <ArrowRight className="m-auto size-3" />
+                      </span>
+                      <span className="flex size-6">
+                        <ArrowRight className="m-auto size-3" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
 
                 <h1
                   className={`mx-auto mt-6 mb-0 pb-0 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-10 xl:text-[5.25rem] text-foreground ${montserrat.className} animate-fade-in-up`}
@@ -138,24 +139,9 @@ export default function HeroSection() {
           </div>
         </section>
       </main>
-      {/* <section className="py-12 md:py-20 isolate">
-        <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-          <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
-            <div className="space-y-4">
-              <div className={`text-5xl font-bold text-primary ${header_font.className}`}>24</div>
-              <p>Smart Contracts Deployed</p>
-            </div>
-            <div className="space-y-4">
-              <div className={`text-5xl font-bold text-primary ${header_font.className}`}>0</div>
-              <p>Coffee Batches Tracked</p>
-            </div>
-            <div className="space-y-4">
-              <div className={`text-5xl font-bold text-primary ${header_font.className}`}>0%</div>
-              <p>Verificate Rate</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      <section className="py-12 md:py-20">
+        <StatsGrid />
+      </section>
     </div>
   )
 }
