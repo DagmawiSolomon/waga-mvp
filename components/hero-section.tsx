@@ -124,10 +124,7 @@ export default function HeroSection() {
         </section>
 
         <section className="relative">
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-secondary/10 to-background" />
-          <div className="mx-auto max-w-7xl px-6">
-            <Globe className="mx-auto" />
-          </div>
+       
            <Features />
             <HowItWorks/> 
          <CallToAction />
