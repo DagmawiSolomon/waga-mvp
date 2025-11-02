@@ -3,7 +3,11 @@ import { Button } from "@/components/ui/button"
 import { HeroHeader } from "@/components/header"
 import { Montserrat, Open_Sans } from "next/font/google"
 import { ArrowRight } from "lucide-react"
-import { StatsGrid } from "@/components/stats-grid"
+import { Globe } from "@/components/ui/globe"
+import Features from "./features-1"
+import HowItWorks from "./how-it-works"
+import CallToAction from "./call-to-action"
+import FooterSection from "./footer"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,26 +20,6 @@ const open_sans = Open_Sans({
   weight: ["400", "500", "700"],
   display: "swap",
 })
-
-const transitionVariants = {
-  item: {
-    hidden: {
-      opacity: 0,
-      filter: "blur(12px)",
-      y: 12,
-    },
-    visible: {
-      opacity: 1,
-      filter: "blur(0px)",
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.3,
-        duration: 1.5,
-      },
-    },
-  },
-} as const
 
 export default function HeroSection() {
   return (
@@ -138,10 +122,18 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
+
+        <section className="relative">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-secondary/10 to-background" />
+          <div className="mx-auto max-w-4xl px-6">
+            <Globe className="mx-auto" />
+          </div>
+        </section>
+         <Features />
+         <HowItWorks/> 
+         <CallToAction />
+        <FooterSection />
       </main>
-      <section className="py-12 md:py-20">
-        <StatsGrid />
-      </section>
     </div>
   )
 }

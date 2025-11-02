@@ -1,13 +1,8 @@
 "use client"
 
-import {
-  Timeline,
-  TimelineItem,
-  TimelineTitle,
-  TimelineDescription,
-  TimelineTime,
-  TimelineHeader,
-} from "@/components/timeline"
+import { Timeline, TimelineItem, TimelineTitle, TimelineDescription, TimelineHeader } from "@/components/timeline"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 import React from "react"
 
 type TimelineItemType = {
@@ -32,6 +27,14 @@ const timelineData: TimelineItemType[] = [
   {
     title: "Distribution Level",
     description: "Distributors request verified batches and redeem tokens for physical coffee delivery",
+  },
+  {
+    title: "Management",
+    description: "Admin portal for WAGA staff to verify, manage, and oversee the entire coffee ecosystem",
+  },
+  {
+    title: "Public Access",
+    description: "Browse and explore verified coffee batches with transparent quality and origin information",
   },
 ]
 
@@ -83,11 +86,15 @@ export const TimelineLayout = () => {
           isInView={inViewIndices.has(index)}
         >
           <TimelineHeader index={index} isInView={inViewIndices.has(index)}>
-            <TimelineTime>Step {index + 1}</TimelineTime>
             <TimelineTitle index={index}>{item.title}</TimelineTitle>
-             {item.description && <TimelineDescription index={index}>{item.description}</TimelineDescription>}
+            {item.description && <TimelineDescription index={index}>{item.description}</TimelineDescription>}
+            <Link
+              href="#"
+              className="flex items-center gap-1 mt-3 text-primary hover:gap-2 transition-all duration-300"
+            >
+              Explore <ArrowRight className="size-4" />
+            </Link>
           </TimelineHeader>
-         
         </TimelineItem>
       ))}
     </Timeline>
