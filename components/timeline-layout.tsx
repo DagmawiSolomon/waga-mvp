@@ -90,7 +90,7 @@ export const TimelineLayout = () => {
             {item.description && <TimelineDescription index={index}>{item.description}</TimelineDescription>}
             <Link
               href="#"
-              className="flex items-center gap-1 mt-3 text-primary hover:gap-2 transition-all duration-300"
+              className="flex items-center gap-1 mt-3 text-primary hover:gap-2 transition-all duration-300 underline"
             >
               Explore <ArrowRight className="size-4" />
             </Link>

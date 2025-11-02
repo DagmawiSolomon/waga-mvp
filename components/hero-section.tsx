@@ -25,7 +25,7 @@ export default function HeroSection() {
   return (
     <div className="min-h-screen w-full relative overflow-hidden" style={{ backgroundColor: `#0a1004` }}>
       <div
-        className="absolute inset-0 z-0"
+        className="fixed inset-0 z-0"
         style={{
           backgroundImage: `
           radial-gradient(circle at 50% 100%, #0aca6a 0%, transparent 50%),
@@ -51,7 +51,7 @@ export default function HeroSection() {
           <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(150,91%,42%,.04)_0,hsla(150,91%,42%,.02)_80%,transparent_100%)]" />
         </div>
         <section>
-          <div className="relative pt-24 md:pt-36">
+          <div className="relative pt-10 md:pt-36">
             <div aria-hidden className="absolute inset-0 -z-10 size-full bg-secondary/30" />
 
             <div className="mx-auto max-w-7xl px-6">
@@ -124,15 +124,15 @@ export default function HeroSection() {
         </section>
 
         <section className="relative">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-secondary/10 to-background" />
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-secondary/10 to-background" />
+          <div className="mx-auto max-w-7xl px-6">
             <Globe className="mx-auto" />
           </div>
-        </section>
-         <Features />
-         <HowItWorks/> 
+           <Features />
+            <HowItWorks/> 
          <CallToAction />
-        <FooterSection />
+        
+        </section> 
       </main>
     </div>
   )

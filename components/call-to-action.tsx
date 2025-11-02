@@ -1,61 +1,29 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { header_font } from "./fonts"
+import FooterSection from "./footer"
+
 
 export default function CallToAction() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Subtle Dashed Grid Background */}
-      <div
-        className="absolute inset-0 z-0 opacity-40 dark:opacity-25"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(231,229,228,0.25) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(231,229,228,0.25) 1px, transparent 1px)
-          `,
-          backgroundSize: "20px 20px",
-          backgroundPosition: "0 0, 0 0",
-          maskImage: `
-            repeating-linear-gradient(
-              to right,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            repeating-linear-gradient(
-              to bottom,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            radial-gradient(ellipse 80% 80% at 0% 0%, #000 60%, transparent 95%)
-          `,
-          WebkitMaskImage: `
-            repeating-linear-gradient(
-              to right,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            repeating-linear-gradient(
-              to bottom,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            radial-gradient(ellipse 80% 80% at 0% 0%, #000 60%, transparent 95%)
-          `,
-          maskComposite: "intersect",
-          WebkitMaskComposite: "source-in",
-        }}
-      />
+   
+    <section className="relative min-h-screen w-full overflow-hidden " >
 
+ 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-5xl px-6 py-12 md:py-20 lg:py-32">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 py-12 md:py-20 lg:py-32 bg-secondary/5 rounded-2xl" style={{
+    backgroundColor: 'rgba(255, 255, 255, 0.05)', // subtle base color
+    backgroundImage: `
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.02),
+        rgba(0,0,0,0.02) 1px,
+        transparent 1px,
+        transparent 2px
+      )
+    `,
+  }}
+>
         <div className="text-center">
           <h2
             className={`text-balance text-4xl font-semibold lg:text-5xl ${header_font.className}`}
@@ -86,6 +54,8 @@ export default function CallToAction() {
           </div>
         </div>
       </div>
+      <FooterSection /> 
     </section>
+    
   )
 }

@@ -43,8 +43,10 @@ const TimelineHeader = React.forwardRef<
         "mb-1 flex flex-col mx-5 sm:mx-0",
         isEven ? "items-start sm:items-end" : "items-start",
         "before:absolute before:top-0 before:left-2 sm:before:left-1/2 before:h-full before:-translate-x-1/2 before:translate-y-3 before:self-start before:bg-slate-300 before:w-0.5 group-last:before:hidden",
-        "after:absolute after:left-2 sm:after:left-1/2 after:box-content after:h-2 after:w-2 after:-translate-x-1/2 after:translate-y-1.5 after:rounded-full after:border-4 after:border-foreground/80 after:bg-foreground after:transition-all after:duration-500 after:shadow-[0_0_15px_4px_var(--tw-shadow-color)] after:[--tw-shadow-color:theme(colors.primary/60)]",
-        isInView && "after:scale-125 after:bg-primary",
+        "after:absolute after:left-2 sm:after:left-1/2 after:box-content after:h-2 after:w-2 after:-translate-x-1/2 after:translate-y-1.5 after:rounded-full after:bg-foreground after:transition-all after:duration-500 after:shadow-[0_0_15px_4px_var(--tw-shadow-color)] after:[--tw-shadow-color:theme(colors.foreground/30)] after:opacity-0",
+        isInView &&
+  "after:scale-150 after:h-4 after:w-4 after:bg-green-500 after:shadow-[0_0_60px_20px_rgba(34,197,94,0.9),0_0_120px_40px_rgba(34,197,94,0.6)] after:opacity-100 after:duration-700 after:animate-pulse",
+
         className,
       )}
       {...props}
