@@ -123,7 +123,7 @@ export default function HeroSection() {
           </div>
         </section>
 
-        <section className="relative">
+        <section className="relative pt-2">
        
            <Features />
             <HowItWorks/> 
